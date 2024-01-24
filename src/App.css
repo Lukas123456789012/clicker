@@ -1,0 +1,10 @@
+body {
+  background-color: rgb(40, 40, 168);
+}
+
+.pokie {
+  height: 100px;
+  width: auto;
+  position: absolute;
+
+}
