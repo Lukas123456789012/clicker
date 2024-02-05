@@ -2,8 +2,11 @@
 import './App.css';
 import {useState} from 'react'
 import cokie from "./cookieimg.jpeg";
+import coki from "./download.jpeg";
 import backgrnd from "./backgorund.png";
-
+// <img 
+//className = 'backrnd'
+//src = {backgrnd}/> 
 function App() {
   const [counter, setCounter] = useState(0);
 
@@ -14,9 +17,6 @@ function App() {
   return (
     <div className="App">
       
-      <img className = 'backrnd'
-      src = {backgrnd}> </img>
-
 
       <li>{counter}</li>
 
@@ -34,7 +34,7 @@ function App() {
       
       <img 
       className='pokie' 
-      src={cokie} 
+      src={coki} 
       alt="help" 
       onClick= {clickHandler}
       />
