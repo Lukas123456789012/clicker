@@ -9,20 +9,34 @@ import backgrnd from "./backgorund.png";
 //src = {backgrnd}/> 
 function App() {
   const [counter, setCounter] = useState(0);
+  const [upgrade, setupgrade] = useState(1);
+  const [mult, setmult] = useState(1);
 
   const clickHandler = () => {
-    setCounter((prevCounter) => prevCounter+1);
+    setCounter((prevCounter) => (prevCounter+upgrade)*mult);
+  }
+  const clickupgrade = () => {
+    
+    if (counter >= upgrade) {
+    setCounter(prevCounter => prevCounter - upgrade);
+    setupgrade((upgrade) => upgrade + 1); 
+    }
+  }
+  const clickmult = () => {
+    setmult(mult => mult + .1)
   }
   
   return (
     <div className="App">
       
 
-      <li>{counter}</li>
+      <li>{Math.ceil(counter)}</li>
 
       
-      
-      
+      <button
+      className = 'upgrade'
+      onClick = {clickupgrade}
+      >  {Math.ceil(upgrade)} </button>
       
       
       <button
@@ -30,6 +44,12 @@ function App() {
       onClick={clickHandler
       }
       > Press for cookie </button>
+      
+      <button
+      className = 'mult'
+      onClick={clickmult
+      }
+      >{mult} </button>
       
       
       <img 
