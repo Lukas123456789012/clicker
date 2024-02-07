@@ -4,6 +4,7 @@ import {useState} from 'react'
 import cokie from "./cookieimg.jpeg";
 import coki from "./download.jpeg";
 import backgrnd from "./backgorund.png";
+import butto from "./Button.jpg"
 // <img 
 //className = 'backrnd'
 //src = {backgrnd}/> 
@@ -28,7 +29,14 @@ function App() {
   
   return (
     <div className="App">
-      
+      <div class = "buttons">
+        <div class ="button1">
+          <img className="button-img" src = {butto} alt = "butto" ></img>
+          <div class = "centered">Centered</div>
+        </div>
+
+
+      </div>
 
       <li>{Math.ceil(counter)}</li>
 
