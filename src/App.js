@@ -24,7 +24,10 @@ function App() {
     }
   }
   const clickmult = () => {
+    if (counter >= (mult*10)) {
+    setCounter(prevCounter => prevCounter - (mult*10));
     setmult(mult => mult + .1)
+    }
   }
   
   return (
@@ -32,34 +35,19 @@ function App() {
       <div class = "buttons">
         <div class ="button1">
           <img className="button-img" src = {butto} alt = "butto" ></img>
-          <div class = "centered">Centered</div>
+          <div class = "centered"> Cookies : {Math.ceil(counter)}</div>
         </div>
-
+        <div class ="button1">
+          <img className="button-img" onClick = {clickupgrade} src = {butto} alt = "butto" ></img>
+          <div class = "centered" > Upgrade 1 : {Math.ceil(upgrade)} ({Math.ceil(upgrade-1)})</div>
+        </div>
+        <div class ="button1">
+          <img className="button-img" onClick={clickmult} src = {butto} alt = "butto" ></img>
+          <div class = "centered"> Upgrade 2 : {Math.ceil(mult*10)} ({Number(mult.toFixed(1))})</div>
+        </div>
+        
 
       </div>
-
-      <li>{Math.ceil(counter)}</li>
-
-      
-      <button
-      className = 'upgrade'
-      onClick = {clickupgrade}
-      >  {Math.ceil(upgrade)} </button>
-      
-      
-      <button
-      className = 'butt'
-      onClick={clickHandler
-      }
-      > Press for cookie </button>
-      
-      <button
-      className = 'mult'
-      onClick={clickmult
-      }
-      >{mult} </button>
-      
-      
       <img 
       className='pokie' 
       src={coki} 
